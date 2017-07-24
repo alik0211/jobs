@@ -1,0 +1,110 @@
+@import "../mixins"
+
+.job
+  position: relative
+  z-index: 1
+  display: table
+  margin-bottom: 1em
+  padding: 1em
+  width: 100%
+  border: 1px solid #e6e7e9
+  border-radius: .3rem
+  background-color: #fff
+  transition: all .3s ease-in-out
+
+  @include clearfix
+
+  &:hover
+    box-shadow: 0 2px 40px 0 rgba(0, 0, 0, .1)
+    cursor: pointer
+
+.job__img-wrap
+  width: 60px
+
+.job__img
+  display: block
+  margin: 0 auto
+  width: 60px
+  border-radius: .25em
+
+.job__info
+  display: table-cell
+  padding-left: 25px
+  width: 640px
+  color: #74718f
+  vertical-align: middle
+  font-size: .9em
+  line-height: 1.25
+
+.job__title
+  margin: 0
+  color: #34324b
+  font-weight: bold
+  font-size: 1.5em
+
+.job__description
+  display: block
+  margin-top: 2px
+  color: #74718f
+  font-size: .9em
+
+.job__type
+  position: relative
+  display: table-cell
+  padding-top: .6em
+  width: 100px
+  vertical-align: middle
+  text-transform: uppercase
+  white-space: nowrap
+  font-weight: bold
+  font-size: .75em
+
+  &::before
+    position: absolute
+    top: 28px
+    left: -20px
+    width: 10px
+    height: 10px
+    border-radius: 100%
+    content: ""
+
+.job__type--freelance
+  color: #4db8de
+
+  &::before
+    background-color: #4db8de
+
+.job__type--full-time
+  color: #fd7576
+
+  &::before
+    background-color: #fd7576
+
+.job__type--part-time
+  color: #fec85d
+
+  &::before
+    background-color: #fec85d
+
+.job__type--contract
+  color: #a378fc
+
+  &::before
+    background-color: #a378fc
+
+@media (max-width: 700px)
+  .job__img-wrap
+    margin-right: 1em
+
+  .job__img
+    width: 50px
+
+  .job__info
+    padding: .4em 0 0
+    width: 100%
+
+  .job__title
+    font-size: 1.25em
+
+  .job__type
+    display: none

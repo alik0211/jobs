@@ -1,0 +1,30 @@
+{
+  "name": "jobs",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "gulp watch"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.6.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-remove-html": "^1.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-style-inject": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alik0211/jobs.git"
+  },
+  "author": "alik0211",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alik0211/jobs/issues"
+  },
+  "homepage": "https://alik0211.tk/jobs"
+}
