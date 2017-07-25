@@ -1,6 +1,8 @@
 @import "../mixins"
 
 .job
+  @include clearfix
+
   position: relative
   z-index: 1
   display: table
@@ -11,8 +13,6 @@
   border-radius: .3rem
   background-color: #fff
   transition: all .3s ease-in-out
-
-  @include clearfix
 
   &:hover
     box-shadow: 0 2px 40px 0 rgba(0, 0, 0, .1)
