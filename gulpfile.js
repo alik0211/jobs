@@ -33,14 +33,18 @@ gulp.task('serve:dist', ['build'], function() {
 
 gulp.task('sass:dev', function() {
   return gulp.src('app/sass/*.sass')
-    .pipe(sass()).on('error', notify.onError())
+    .pipe(sass({
+      includePaths: require('node-normalize-scss').includePaths
+    })).on('error', notify.onError())
     .pipe(autoprefixer(['last 10 versions']))
     .pipe(gulp.dest('app/css'));
 });
 
 gulp.task('sass:prod', function() {
   return gulp.src('app/sass/*.sass')
-    .pipe(sass()).on('error', notify.onError())
+    .pipe(sass({
+      includePaths: require('node-normalize-scss').includePaths
+    })).on('error', notify.onError())
     .pipe(autoprefixer(['last 10 versions']))
     .pipe(cleanCSS({ level: { 1: { specialComments: 0 }}}))
     .pipe(gulp.dest('app/css'));

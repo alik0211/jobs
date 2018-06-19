@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/alik0211/jobs/issues"
   },
-  "homepage": "https://alik0211.ru/jobs"
+  "homepage": "https://alik0211.ru/jobs",
+  "dependencies": {
+    "node-normalize-scss": "^8.0.0"
+  }
 }
