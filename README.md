@@ -1,5 +1,6 @@
 # Jobs
 
+[![Travis](https://img.shields.io/travis/com/alik0211/jobs/master.svg?style=flat-square)](https://travis-ci.com/alik0211/jobs)
 [![Dependency Status](https://img.shields.io/david/alik0211/jobs.svg?label=deps&style=flat-square)](https://david-dm.org/alik0211/jobs)
 [![devDependency Status](https://img.shields.io/david/dev/alik0211/jobs.svg?label=devDeps&style=flat-square)](https://david-dm.org/alik0211/jobs?type=dev)
 
