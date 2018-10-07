@@ -10,7 +10,7 @@
     "browser-sync": "^2.18.12",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-clean-css": "^3.6.0",
     "gulp-htmlmin": "^4.0.0",
     "gulp-inject-css": "^1.0.0",
