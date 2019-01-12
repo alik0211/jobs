@@ -3,13 +3,13 @@
   "version": "1.1.9",
   "description": "List of vacancies for developers",
   "scripts": {
-    "start": "gulp watch",
+    "start": "gulp",
     "build": "gulp build"
   },
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-clean-css": "^4.0.0",
     "gulp-htmlmin": "^5.0.1",

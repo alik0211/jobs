@@ -9,9 +9,13 @@ const del          = require('del'),
       browserSync  = require('browser-sync'),
       autoprefixer = require('gulp-autoprefixer');
 
-const reload = browserSync.reload;
+gulp.task('reload', function(cb) {
+  browserSync.reload();
 
-gulp.task('serve', function() {
+  cb();
+});
+
+gulp.task('serve', function(cb) {
   browserSync({
     server: {
       baseDir: 'app'
@@ -19,16 +23,8 @@ gulp.task('serve', function() {
     port: 8888,
     notify: false
   });
-});
 
-gulp.task('serve:dist', ['build'], function() {
-  browserSync({
-    server: {
-      baseDir: 'dist'
-    },
-    port: 9999,
-    notify: false
-  });
+  cb();
 });
 
 gulp.task('sass:dev', function() {
@@ -50,23 +46,31 @@ gulp.task('sass:prod', function() {
     .pipe(gulp.dest('app/css'));
 });
 
-gulp.task('clean', function() {
-  return del.sync('dist');
+gulp.task('clean', function(cb) {
+  del.sync('dist');
+
+  cb();
 });
 
-gulp.task('build', ['clean', 'sass:prod'], function() {
-  gulp.src('app/*.html')
+gulp.task('html:prod', function() {
+  return gulp.src('app/*.html')
     .pipe(removeHtml())
     .pipe(injectCSS())
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('dist'));
-
-  gulp.src('app/img/**/*').pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('watch', ['sass:dev', 'serve'], function() {
-  gulp.watch('app/*.html', reload);
-  gulp.watch('app/sass/**/*.sass', ['sass:dev', reload]);
+gulp.task('assets:prod', function() {
+  return gulp.src('app/img/**/*').pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('default', ['watch']);
+gulp.task('watch', function(cb) {
+  gulp.watch('app/*.html', gulp.series('reload'));
+  gulp.watch('app/sass/**/*.sass', gulp.series('sass:dev', 'reload'));
+
+  cb();
+});
+
+gulp.task('build', gulp.series('clean', 'sass:prod', 'html:prod', 'assets:prod'));
+
+gulp.task('default', gulp.series('sass:dev', 'serve', 'watch'));
